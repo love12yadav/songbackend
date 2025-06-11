@@ -51,7 +51,6 @@ public class SongController {
             Files.createDirectories(filePath.getParent());
             Files.write(filePath, file.getBytes());
 
-            // Save song metadata
             Song song = new Song();
             song.setTitle(title);
             song.setArtist(artist);
