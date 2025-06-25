@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.UUID;
 @RestController
 @RequestMapping("/api/songs")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 public class SongController {
 
     private static final String UPLOAD_DIR = "uploads/";

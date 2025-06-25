@@ -8,6 +8,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/songs/**").allowedOrigins("http://localhost:3000");
+        registry.addMapping("/api/songs/**")
+                .allowedOrigins("http://localhost:3000", "https://justlisten-pi.vercel.app")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")  // <== THIS IS CRITICAL
+                .allowedHeaders("*")
+                .allowCredentials(true);
     }
 }
